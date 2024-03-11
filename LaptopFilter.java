@@ -21,6 +21,16 @@ public class LaptopFilter {
         filterCriteria.put(3, "Диагональ экрана");
         filterCriteria.put(4, "Цвет");
 
+        // Запросить у пользователя критерии фильтрации
+        System.out.println("Ноутбуки в наличии: " + laptops);
+        System.out.println();
+        System.out.println("Введите цифру, соответствующую необходимому критерию:");
+        System.out.println();
+        for (Map.Entry<Integer, String> entry : filterCriteria.entrySet()) {
+            System.out.println(entry.getKey() + " - " + entry.getValue());
+        }
+        int criterion = Integer.parseInt(System.console().readLine());
+
 
     public static void main(String[] args) {
         // Создать множество ноутбуков
