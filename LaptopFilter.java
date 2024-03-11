@@ -31,6 +31,41 @@ public class LaptopFilter {
         }
         int criterion = Integer.parseInt(System.console().readLine());
 
+        // Запросить минимальные значения для указанных критериев
+        
+        System.out.println("Введите минимальное значение для выбранного критерия:");
+        String minValue = System.console().readLine();
+
+        // Отфильтровать ноутбуки
+        List<Laptop> filteredLaptops = new ArrayList<>();
+        for (Laptop laptop : laptops) {
+            switch (criterion) {
+                case 1:
+                    if (laptop.getRam() >= Integer.parseInt(minValue)) {
+                        filteredLaptops.add(laptop);
+                    }
+                    
+                    break;
+                case 2:
+                    if (laptop.getHdd() >= Integer.parseInt(minValue)) {
+                        filteredLaptops.add(laptop);
+                    }
+                    break;
+                case 3:
+                    if (laptop.getDiagonal() >= Double.parseDouble(minValue)) {
+                        filteredLaptops.add(laptop);
+                    }
+                    break;
+                case 4:
+                    if (laptop.getColor().equals(minValue)) {
+                        filteredLaptops.add(laptop);
+                    }
+                    break;
+            }
+        }
+    }
+    
+
 
     public static void main(String[] args) {
         // Создать множество ноутбуков
@@ -47,6 +82,7 @@ public class LaptopFilter {
         // Отфильтровать ноутбуки
         filter.filterLaptops();
     }
+
 }
 
 class Laptop {
