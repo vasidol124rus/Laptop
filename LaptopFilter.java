@@ -63,7 +63,13 @@ public class LaptopFilter {
                     break;
             }
         }
+        // Вывести проходящие по условиям ноутбуки
+        System.out.println("Проходящие по условиям ноутбуки:");
+        for (Laptop laptop : filteredLaptops) {
+            System.out.println(laptop);
+        }
     }
+    
     
 
 
