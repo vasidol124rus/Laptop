@@ -34,6 +34,7 @@ public class LaptopFilter {
         // Запросить минимальные значения для указанных критериев
         
         System.out.println("Введите минимальное значение для выбранного критерия:");
+        System.out.println();
         String minValue = System.console().readLine();
 
         // Отфильтровать ноутбуки
@@ -57,7 +58,7 @@ public class LaptopFilter {
                     }
                     break;
                 case 4:
-                    if (laptop.getColor().equals(minValue)) {
+                    if (laptop.getColor().toLowerCase().equals(minValue)) {
                         filteredLaptops.add(laptop);
                     }
                     break;
