@@ -3,8 +3,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
-
 public class LaptopFilter {
 
     private List<Laptop> laptops;
@@ -32,7 +30,7 @@ public class LaptopFilter {
         int criterion = Integer.parseInt(System.console().readLine());
 
         // Запросить минимальные значения для указанных критериев
-        
+
         System.out.println("Введите минимальное значение для выбранного критерия:");
         System.out.println();
         String minValue = System.console().readLine();
@@ -45,7 +43,7 @@ public class LaptopFilter {
                     if (laptop.getRam() >= Integer.parseInt(minValue)) {
                         filteredLaptops.add(laptop);
                     }
-                    
+
                     break;
                 case 2:
                     if (laptop.getHdd() >= Integer.parseInt(minValue)) {
@@ -62,7 +60,10 @@ public class LaptopFilter {
                         filteredLaptops.add(laptop);
                     }
                     break;
+
             }
+            
+
         }
         // Вывести проходящие по условиям ноутбуки
         System.out.println("Проходящие по условиям ноутбуки:");
@@ -70,9 +71,6 @@ public class LaptopFilter {
             System.out.println(laptop);
         }
     }
-    
-    
-
 
     public static void main(String[] args) {
         // Создать множество ноутбуков
@@ -130,6 +128,7 @@ class Laptop {
 
     @Override
     public String toString() {
-        return "Ноутбук: " + brand + ", ОЗУ: " + ram + " ГБ, Объем ЖД: " + hdd + " ГБ, Диагональ экрана " + diagonal + ", Цвет: " + color;
+        return "Ноутбук: " + brand + ", ОЗУ: " + ram + " ГБ, Объем ЖД: " + hdd + " ГБ, Диагональ экрана " + diagonal
+                + ", Цвет: " + color;
     }
 }
